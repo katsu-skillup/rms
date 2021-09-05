@@ -1,0 +1,14 @@
+      <header class='top-page-header'>
+          <h1 class='system-title'>Resources Management System</h1>
+        <div class='nav'>
+           <ul class='right-lists'>
+             <% unless user_signed_in? %>
+               <li class='header-list'><%= link_to 'アカウント作成', new_user_registration_path, class: "sign-up" %></li>
+               <li class='header-list'><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+             <% else %>
+                <li class='user-name'><%= current_user.name%>様</li>
+                <li class='header-list'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
+             <% end %>
+         </ul>
+        </div>
+      </header>
