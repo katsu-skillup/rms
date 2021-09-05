@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+      <div class='top-page-content'>
+        <div class='left-content'>
+        </div>
+        <div class='right-content'>
+          <p>
+          <% if user_signed_in? %>
+          <div class='main-menu'>
+            <p>Main Menu</p>
+              <ul class='main-menu-lists'>
+                <li class='menu-list'>Member 登録</li>
+                <li class='menu-list'>Member 一覧</li>
+              </ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+
+<%= render "shared/footer" %>

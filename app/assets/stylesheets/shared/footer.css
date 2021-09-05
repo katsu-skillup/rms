@@ -1,0 +1,11 @@
+footer{
+  text-align: center;
+  height: 40px;
+  background-color: black;
+  color: white;
+  font-family:'Oswald', sans-serif;
+}
+
+.footer-copy{
+  padding: 10px;
+}
