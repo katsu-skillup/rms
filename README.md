@@ -22,7 +22,7 @@
 | --------------| ---------- | ------------------------------ |
 | member_name   | string     | null: false                    |
 | organization  | string     | null: false                    |
-| position      | string     | null: false                    |
+| position      | string     |                                |
 | work_info     | text       | null: false                    |
 | valuation_id  | integer    | null: false                    |
 | communication | integer    | null: false                    |
