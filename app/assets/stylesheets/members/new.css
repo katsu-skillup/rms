@@ -7,6 +7,10 @@ body{
   flex-direction: column;
 }
 
+li {
+  list-style: none;
+}
+
 .member-contents{
   background-color: #dddddd;
   width: 100vw;
