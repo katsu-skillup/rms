@@ -4,7 +4,6 @@
         <div class='left-content'>
         </div>
         <div class='right-content'>
-          <p>
           <% if user_signed_in? %>
           <div class='main-menu'>
             <p>Main Menu</p>
@@ -12,6 +11,14 @@
                 <li class='menu-list'>Member 登録</li>
                 <li class='menu-list'>Member 一覧</li>
               </ul>
+          </div>
+          <% else %>
+           <div class='ad'>
+            <p>Manage</p>
+            <p>Your Resources</p>
+            <p>Effecttively</p>
+            <p>and</p>
+            <p>Efficiently</p>
           </div>
           <% end %>
         </div>

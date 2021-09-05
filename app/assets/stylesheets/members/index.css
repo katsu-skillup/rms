@@ -1,0 +1,80 @@
+html,body{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+.members-show{
+  background-color: #dddddd;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+  flex: 1;
+}
+
+.members-box{
+  width: 90vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.member-table-explanation{
+  font-size: 18px;
+  margin: 15px 0px 5px 0px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid black;
+}
+
+.members-table{
+  margin: 0 5px 20px 5px;
+}
+
+.member-item{
+  text-align: center;
+  border: solid 0.5px #333333;
+  padding: 5px;
+}
+
+.member-info,.member-value{
+  min-height: 20vh;
+  max-width: 25vw;
+  overflow-wrap: anywhere;
+  padding: 5px;
+  border: 0.5px solid #333333;
+}
+.member-value{
+  text-align: center;
+}
+
+.member-menu-list{
+  display: flex;
+}
+.menu-list{
+  background-color: #0c4da2;
+  box-shadow: 0 3px #022561;
+  border-radius: 5px;
+  top: -2px;
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.menu-list:hover{
+  box-shadow: 0 1px #022561;
+  top: 0px;
+}
+
+.index-title{
+  font-size: 20px;
+  font-weight: bold;
+}

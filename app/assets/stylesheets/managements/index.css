@@ -50,3 +50,13 @@ body{
   box-shadow: 0 1px #022561;
   top: 0px;
 }
+
+.ad{
+  text-align: center;
+  font-family:'Allison', cursive ;
+  font-size: 64px;
+  font-weight: bolder;
+  margin: 100px 30px;
+  padding: 20px;
+  
+}
