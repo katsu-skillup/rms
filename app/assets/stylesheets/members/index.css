@@ -58,7 +58,7 @@ body{
   display: flex;
 }
 
-.menu-list{
+.submit-btn{
   background-color: #0c4da2;
   box-shadow: 0 3px #022561;
   border-radius: 5px;
@@ -70,9 +70,10 @@ body{
   margin: 10px;
   text-align: center;
   padding: 10px;
+  min-width: 10vw;
 }
 
-.menu-list:hover{
+.submit-btn:hover{
   box-shadow: 0 1px #022561;
   top: 0px;
 }

@@ -95,6 +95,10 @@ li {
   padding-left: 10px;
 }
 
+.member-btn-content{
+  display: flex;
+}
+
 .submit-btn{
   background-color: #0c4da2;
   box-shadow: 0 3px #022561;
