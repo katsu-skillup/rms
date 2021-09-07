@@ -8,7 +8,7 @@
            <div class='member-menu'>
               <ul class='member-menu-list'>
                 <li><%= link_to 'トップページ', root_path, class:"submit-btn" %></li>
-                <li><%= link_to 'Member登録', root_path, class:"submit-btn" %></li>
+                <li><%= link_to 'Member登録', new_member_path, class:"submit-btn" %></li>
               </ul>
            </div>
            <table class='members-table'>
@@ -26,17 +26,19 @@
                </tr>
              </thead>
              <tbody>
+           <% @members.each do |member| %>
                 <tr>
-                 <td class='member-information'>メンバーX</td>   
-                 <td class='member-information'>所属</td>   
-                 <td class='member-information'>役職</td>   
-                 <td class='member-information'>XXXXXXXXXXXXXXXX</td>   
-                 <td class='member-value'>X</td>   
-                 <td class='member-value'>XX</td>   
-                 <td class='member-value'>XX</td>   
-                 <td class='member-value'>XX</td>   
-                 <td class='member-value'>XX</td>   
+                 <td class='member-information'><%= member.member_name %></td>   
+                 <td class='member-information'><%= member.organization %></td>   
+                 <td class='member-information'><%= member.position %></td>   
+                 <td class='member-information'><%= member.work_info %></td>   
+                 <td class='member-value'><%= member.valuation.name %></td>   
+                 <td class='member-value'><%= member.communication %></td>   
+                 <td class='member-value'><%= member.leadership %></td>   
+                 <td class='member-value'><%= member.skill %></td>   
+                 <td class='member-value'><%= member.motivation %></td>   
                 </tr>
+            <% end %>
              </tbody>
            </table>
           </div>
