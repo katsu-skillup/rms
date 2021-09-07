@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_action :authenticate_user!
 
 def index
   members = Member.all
@@ -12,11 +13,14 @@ end
 def create
   @member = Member.new(member_params)
     if @member.save
-      redirect_to root_path
+      redirect_to members_path
     else
       render :new
     end
 end
+
+ def show
+ end
 
 private
 

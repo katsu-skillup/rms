@@ -26,17 +26,53 @@
                </tr>
              </thead>
              <tbody>
-           <% @members.each do |member| %>
+              <% @members.each do |member| %>
                 <tr>
-                 <td class='member-information'><%= member.member_name %></td>   
-                 <td class='member-information'><%= member.organization %></td>   
-                 <td class='member-information'><%= member.position %></td>   
-                 <td class='member-information'><%= member.work_info %></td>   
-                 <td class='member-value'><%= member.valuation.name %></td>   
-                 <td class='member-value'><%= member.communication %></td>   
-                 <td class='member-value'><%= member.leadership %></td>   
-                 <td class='member-value'><%= member.skill %></td>   
-                 <td class='member-value'><%= member.motivation %></td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.member_name %>
+                 <% end %>
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.organization %>
+                 <% end %> 
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.position %>
+                 <% end %>
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.work_info %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.valuation.name %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.communication %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.leadership %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.skill %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.motivation %>
+                 <% end %>
+                 </td>   
                 </tr>
             <% end %>
              </tbody>

@@ -36,6 +36,7 @@ body{
 }
 
 .member-item{
+  max-width: 25vw;
   text-align: center;
   border: solid 0.5px #333333;
   padding: 5px;
@@ -44,7 +45,7 @@ body{
 
 .member-information,.member-value{
   min-height: 20vh;
-  max-width: 25vw;
+  max-width: 20vw;
   overflow-wrap: anywhere;
   padding: 5px;
   border: 0.5px solid #333333;
@@ -81,4 +82,8 @@ body{
 .index-title{
   font-size: 20px;
   font-weight: bold;
+}
+
+.show_link:hover{
+  color: red;
 }
