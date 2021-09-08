@@ -7,6 +7,10 @@ body{
   flex-direction: column;
 }
 
+li {
+  list-style: none;
+}
+
 .member-contents{
   background-color: #dddddd;
   width: 100vw;
@@ -86,9 +90,18 @@ body{
 }
 
 .select-box {
-  width: 30px;
+  width: 140px;
   border:1px solid gray;
+  border-radius: 3px;
+  background-color:lightgrey;
   padding-left: 10px;
+}
+
+
+
+.member-btn-content{
+  display: flex;
+  justify-content: center;
 }
 
 .submit-btn{

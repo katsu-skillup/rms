@@ -3,12 +3,12 @@
   <div class='members-show'>
           <div class='members-box'>
            <div class='member-table-explanation'>
-              <span class='index-title'>ユーザー名＆様の管理Member一覧</span>
+              <span class='index-title'><%= current_user.name %>様の管理Member一覧</span>
            </div>
            <div class='member-menu'>
               <ul class='member-menu-list'>
-                <li class='menu-list'>トップページ</li>
-                <li class='menu-list'>Member 登録</li>
+                <li><%= link_to 'トップページ', root_path, class:"submit-btn" %></li>
+                <li><%= link_to 'Member登録', new_member_path, class:"submit-btn" %></li>
               </ul>
            </div>
            <table class='members-table'>
@@ -26,171 +26,55 @@
                </tr>
              </thead>
              <tbody>
+              <% @members.each do |member| %>
                 <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.member_name %>
+                 <% end %>
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.organization %>
+                 <% end %> 
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.position %>
+                 <% end %>
+                 </td>   
+                 <td class='member-information'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.work_info %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.valuation.name %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.communication %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.leadership %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.skill %>
+                 <% end %>
+                 </td>   
+                 <td class='member-value'>
+                 <%= link_to member_path(member.id),class:"show_link" do %>
+                   <%= member.motivation %>
+                 <% end %>
+                 </td>   
                 </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
-                <tr>
-                  <td class='member-info'>メンバーX</td>   
-                  <td class='member-info'>XXXXXXXXX</td>   
-                  <td class='member-info'>XXXX</td>   
-                  <td class='member-info'>XXXXXXXXXXXXX</td>   
-                  <td class='member-value'>X</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                  <td class='member-value'>XX</td>   
-                </tr>
+            <% end %>
              </tbody>
            </table>
           </div>

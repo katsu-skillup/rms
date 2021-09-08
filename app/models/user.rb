@@ -9,4 +9,7 @@ validates :name, presence: true
 PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
 validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
 
+has_many :members
+has_one :meeting
+
 end

@@ -8,8 +8,8 @@
           <div class='main-menu'>
             <p>Main Menu</p>
               <ul class='main-menu-lists'>
-                <li class='menu-list'>Member 登録</li>
-                <li class='menu-list'>Member 一覧</li>
+                <li class='menu-list'><%= link_to 'Member 登録', new_member_path %></li>
+                <li class='menu-list'><%= link_to 'Member 一覧', members_path %></li>
               </ul>
           </div>
           <% else %>
