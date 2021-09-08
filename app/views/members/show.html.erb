@@ -57,6 +57,7 @@
         </div>
         <div class='meeting-contents'>
           <h2 class='name'>【面談記録一覧】</h2>
+          <% @meetings.each do |meeting| %>
           <div class='meeting-content'>
             <table class='meeting-table'>
               <thead>
@@ -67,8 +68,8 @@
               </thead>
               <tbody>
                 <tr> 
-                  <td class='meeting-info'>2021/11/30</td>
-                  <td class='meeting-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                  <td class='meeting-date-info'><%= meeting.meeting_date %></td>
+                  <td class='meeting-info'><%= meeting.meeting_info %></td>
                 </tr>
               </tbody>
             </table>
@@ -77,25 +78,8 @@
               <input type='submit' value='削除' class='submit-btn'>
             </div>
           </div>
-          <div class='meeting-content'>
-            <table class='meeting-table'>
-              <thead>
-                <tr>
-                  <th class='meeting-item'>日時</th>
-                  <th class='meeting-item'>内容</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr> 
-                  <td class='meeting-info'>2021/9/30</td>
-                  <td class='meeting-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class='meeting-btn-content'>
-              <input type='submit' value='編集' class='submit-btn'>
-              <input type='submit' value='削除' class='submit-btn'>
-            </div>
+          <% end %>
+
           </div>
         </div>
       </div>

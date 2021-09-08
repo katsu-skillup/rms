@@ -3,8 +3,8 @@ class Member < ApplicationRecord
   belongs_to :valuation
 
   belongs_to :user
-  has_many :meetings
-  has_one_attached :image
+  has_many :meetings, dependent: :destroy
+  has_one_attached :image, dependent: :destroy
 
   with_options presence: true do
     validates :member_name

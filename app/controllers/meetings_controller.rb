@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
+  
   def new
     @meeting = Meeting.new
   end

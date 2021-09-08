@@ -21,6 +21,7 @@ end
 
  def show
   @member = Member.find(params[:id])
+  @meetings = @member.meetings.order(meeting_date:"DESC")
  end
 
  def edit
