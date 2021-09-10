@@ -14,6 +14,25 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def edit
+    @meeting = Meeting.find(params[:id])
+  end
+
+  def update
+    @meeting = Meeting.find(params[:id])
+   if @meeting.update(meeting_params)
+      redirect_to member_path(params[:member_id])
+   else
+     render :edit
+   end
+  end
+
+  def destroy
+    @meeting = Meeting.find(params[:id])
+    @meeting.destroy
+    redirect_to member_path(params[:member_id])
+  end
+
 private
   
   def meeting_params

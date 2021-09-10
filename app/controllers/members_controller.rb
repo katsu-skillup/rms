@@ -26,7 +26,7 @@ end
 
  def edit
   @member = Member.find(params[:id])
-end
+ end
 
 def update
   @member = Member.find(params[:id])

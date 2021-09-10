@@ -4,7 +4,7 @@ class Member < ApplicationRecord
 
   belongs_to :user
   has_many :meetings, dependent: :destroy
-  has_one_attached :image, dependent: :destroy
+  has_one_attached :image, dependent: :purge_later
 
   with_options presence: true do
     validates :member_name
