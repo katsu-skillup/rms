@@ -1,0 +1,90 @@
+<%= render "shared/header" %>
+
+<div class='member-contents'>
+   <div class='member-wrap'>
+      <div class='member-reg-box'>
+        <h2 class='member-reg-title'>Member情報入力</h2>
+      </div>
+
+    <%= form_with model: @member,local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+      <div class='img-upload'>
+        <div class='title-text'>
+          画像
+        </div>
+        <div class='click-upload'>
+        <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          名前
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.text_area :member_name, class:"name-text", placeholder:"氏名" %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          所属
+          <span class='indispensable'>必須</span>
+        </div>
+           <%= f.text_area :organization, class:"name-text", placeholder:"所属" %>
+      </div>
+      <div class='member-info'>
+         <div class="title-text">
+          役職
+         </div>
+          <%= f.text_area :position, class:"name-text", placeholder:"役職" %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          職務内容
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.text_area :work_info, class:"exp-area", placeholder:"職務内容" %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          総合評価
+          <span class='indispensable'>必須</span>
+        </div>
+           <%= f.collection_select(:valuation_id, Valuation.all, :id, :name, {}, {class:"select-box"}) %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          コミュニケーション能力
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.select :communication,[["10","10"],["9","9"],["8","8"],["7","7"],["6","6"],["5","5"],["4","4"],["3","3"],["2","2"],["1","1"]], {include_blank: "選択して下さい"}, {class:"select-box"} %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          リーダーシップ
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.select :leadership,[["10","10"],["9","9"],["8","8"],["7","7"],["6","6"],["5","5"],["4","4"],["3","3"],["2","2"],["1","1"]], {include_blank: "選択して下さい"}, {class:"select-box"} %>
+        </div>
+      <div class='member-info'>
+        <div class="title-text">
+          スキル
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.select :skill,[["10","10"],["9","9"],["8","8"],["7","7"],["6","6"],["5","5"],["4","4"],["3","3"],["2","2"],["1","1"]], {include_blank: "選択して下さい"}, {class: "select-box"} %>
+      </div>
+      <div class='member-info'>
+        <div class="title-text">
+          モチベーション
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.select :motivation,[["10","10"],["9","9"],["8","8"],["7","7"],["6","6"],["5","5"],["4","4"],["3","3"],["2","2"],["1","1"]], {include_blank: "選択して下さい"}, {class: "select-box"} %>
+      </div>
+      <div class='member-btn-content'>
+        <%= f.submit "更新する" ,class:"submit-btn" %>
+        <%= link_to '戻る', member_path(@member.id), class:"submit-btn" %>
+      </div>
+    </div>
+   <% end %>
+</div>
+
+<%= render "shared/footer" %>

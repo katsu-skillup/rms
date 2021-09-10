@@ -1,0 +1,61 @@
+html,body{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-box{
+  background-color:#dddddd;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+  flex: 1;
+}
+
+.meeting-wrap{
+  background-color: white;
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meeting-reg-box{
+  margin: 15px;
+}
+
+.meeting-reg-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.meeting-reg{
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.title-text{
+  margin-bottom: 10px;
+}
+
+.meeting-date{
+  border: 1px solid gray;
+  max-width: 15vw;
+}
+
+.meeting-exp{
+  width: 50vw;
+  border: 1px solid gray;
+  min-height: 40vh;
+}

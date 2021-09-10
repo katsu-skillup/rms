@@ -3,58 +3,61 @@
  <div class="member-show">
       <div class="member-box">
         <h2 class="name">評価対象者</h2>
+
         <div class="member-img-content">
-          <img src="" alt="評価者の画像" class="member-img">
+           <%= image_tag @member.image.variant(resize: '100X100') , class:"member-img" if @member.image.attached? %>
         </div>
         <div class='member-table-show'>
           <table class='member-table'>
             <tbody>
               <tr> 
                 <th class='show-item'>氏名</th>
-                <td class='show-info'>メンバーX</td>
+                <td class='show-info'><%= @member.member_name %></td>
               </tr>
               <tr>
                 <th class='show-item'>所属</th>
-                <td class='show-info'>XXXXXXXXX</td>   
+                <td class='show-info'><%= @member.organization %></td>   
               </tr>
               <tr>
                 <th class='show-item'>役職</th>
-                <td class='show-info'>XXXX</td>
+                <td class='show-info'><%= @member.position %></td>
               </tr>
               <tr>   
                 <th class='show-item'>職務内容</th>
-                <td class='show-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td> 
+                <td class='show-info'><%= @member.work_info %></td> 
               </tr>
               <tr>  
                 <th class='show-item'>総合評価</th>
-                <td class='show-value'>X</td>
+                <td class='show-value'><%= @member.valuation.name %></td>
               </tr>
               <tr>
                 <th class='show-item'>コミュニケーション能力</th>
-                <td class='show-value'>XX</td> 
+                <td class='show-value'><%= @member.communication %></td> 
               </tr>
               <tr>  
                 <th class='show-item'>リーダーシップ</th>
-                <td class='show-value'>XX</td>
+                <td class='show-value'><%= @member.leadership %></td>
               </tr>
               <tr>
                 <th class='show-item'>スキル</th>
-                <td class='show-value'>XX</td>
+                <td class='show-value'><%= @member.skill %></td>
               </tr>
               <tr>
                 <th class='show-item'>モチベーション</th>
-                <td class='show-value'>XX</td>   
+                <td class='show-value'><%= @member.motivation %></td>   
               </tr>
             </tbody>
           </table>
           <div class='meeting-btn-content'>
-            <input type='submit' value='面談記録入力' class='submit-btn'>
-            <input type='submit' value='Member編集' class='submit-btn'>
-            <input type='submit' value='Member削除' class='submit-btn'>
+            <%= link_to '面談記録入力', new_member_meeting_path(@member.id), class:"submit-btn" %>
+            <%= link_to "Member編集", edit_member_path(@member.id), method: :get, class:'submit-btn' %>
+            <%= link_to "Member削除", member_path(@member.id), method: :delete, data: {confirm: "削除しますか？"} , class:'submit-btn' %>
+            <%= link_to '戻る', members_path, class:'submit-btn' %>
           </div>
         </div>
         <div class='meeting-contents'>
           <h2 class='name'>【面談記録一覧】</h2>
+          <% @meetings.each do |meeting| %>
           <div class='meeting-content'>
             <table class='meeting-table'>
               <thead>
@@ -65,35 +68,18 @@
               </thead>
               <tbody>
                 <tr> 
-                  <td class='meeting-info'>2021/11/30</td>
-                  <td class='meeting-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+                  <td class='meeting-date-info'><%= meeting.meeting_date %></td>
+                  <td class='meeting-info'><%= meeting.meeting_info %></td>
                 </tr>
               </tbody>
             </table>
             <div class='meeting-btn-content'>
-              <input type='submit' value='編集' class='submit-btn'>
-              <input type='submit' value='削除' class='submit-btn'>
+              <%= link_to "編集", edit_member_meeting_path(@member.id, meeting.id), method: :get, class:'submit-btn' %>
+              <%= link_to "削除", member_meeting_path(@member.id, meeting.id), method: :delete, data: {confirm: "削除しますか？"} , class:'submit-btn' %>
             </div>
           </div>
-          <div class='meeting-content'>
-            <table class='meeting-table'>
-              <thead>
-                <tr>
-                  <th class='meeting-item'>日時</th>
-                  <th class='meeting-item'>内容</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr> 
-                  <td class='meeting-info'>2021/9/30</td>
-                  <td class='meeting-info'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class='meeting-btn-content'>
-              <input type='submit' value='編集' class='submit-btn'>
-              <input type='submit' value='削除' class='submit-btn'>
-            </div>
+          <% end %>
+
           </div>
         </div>
       </div>

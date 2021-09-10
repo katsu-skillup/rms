@@ -1,0 +1,34 @@
+<%= render "shared/header" %> 
+ 
+ <div class='meeting-box'>
+      <div class='meeting-wrap'>
+        <div class='meeting-reg-box'>
+          <h2 class='meeting-reg-title'>面談記録</h2>
+        </div>
+        
+       <%= form_with model: @meeting, url: member_meeting_path, method: :put, local: true do |f| %>
+       <%= render 'shared/error_messages', model: f.object %>
+
+        <div class='meeting-reg'>
+          <div class="title-text">
+           面談日
+           <span class='indispensable'>必須</span>
+          </div>
+          <%= f.date_field :meeting_date, class:"meeting-date"%>
+        </div>
+        <div class='meeting-reg'>
+          <div class="title-text">
+           面談記録
+           <span class='indispensable'>必須</span>
+          </div>
+          <%= f.text_area :meeting_info, class:"meeting-exp", placeholder:"面談内容" %>
+        </div>
+        <div class='meeting-btn-content'>
+          <%= f.submit "更新する" ,class:"submit-btn" %>
+          <%= link_to '戻る', member_path(params[:member_id]), class:"submit-btn" %>
+        </div>
+       <% end %>
+      </div>
+    </div>
+
+<%= render "shared/footer" %>
