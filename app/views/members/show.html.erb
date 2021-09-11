@@ -74,6 +74,7 @@
               </tbody>
             </table>
             <div class='meeting-btn-content'>
+            <%# paramsを複数設定できずに苦戦 %>
               <%= link_to "編集", edit_member_meeting_path(@member.id, meeting.id), method: :get, class:'submit-btn' %>
               <%= link_to "削除", member_meeting_path(@member.id, meeting.id), method: :delete, data: {confirm: "削除しますか？"} , class:'submit-btn' %>
             </div>

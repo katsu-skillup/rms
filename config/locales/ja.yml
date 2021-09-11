@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+      member:
+        member_name: 名前
+        image: 画像
+        organization: 所属
+        work_info: 職務内容
+        position: 役職
+        communication: コミュニケーション能力
+        leadership: リーダシップ
+        skill: スキル
+        motivation: モチベーション
+        valuation_id: 総合評価
+      meeting:
+        meeting_date: 面談日
+        meeting_info: 面談内容
+
