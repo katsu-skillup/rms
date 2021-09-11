@@ -1,5 +1,7 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_member, only: [:show, :edit, :update, :destroy, :cheack_authority]
+  before_action :cheack_authority, only: [:show, :edit, :update, :destroy] 
 
 def index
   members = Member.all
@@ -20,16 +22,13 @@ def create
 end
 
  def show
-  @member = Member.find(params[:id])
   @meetings = @member.meetings.order(meeting_date:"DESC")
  end
 
  def edit
-  @member = Member.find(params[:id])
  end
 
 def update
-  @member = Member.find(params[:id])
   if @member.update(member_params)
     redirect_to member_path(params[:id])
    else
@@ -38,7 +37,6 @@ def update
   end
 
 def destroy
-  @member = Member.find(params[:id])
   @member.destroy
   redirect_to members_path
 end
@@ -47,6 +45,16 @@ private
 
 def member_params
   params.require(:member).permit(:image, :member_name, :organization, :position, :work_info, :valuation_id, :communication, :leadership, :skill, :motivation).merge(user_id: current_user.id)
+end
+
+def set_member
+  @member = Member.find(params[:id])
+end
+
+def cheack_authority
+  unless @member.user_id == current_user.id
+    redirect_to root_path
+  end
 end
 
 

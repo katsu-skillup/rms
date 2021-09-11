@@ -51,7 +51,7 @@
           <div class='meeting-btn-content'>
             <%= link_to '面談記録入力', new_member_meeting_path(@member.id), class:"submit-btn" %>
             <%= link_to "Member編集", edit_member_path(@member.id), method: :get, class:'submit-btn' %>
-            <%= link_to "Member削除", member_path(@member.id), method: :delete, data: {confirm: "削除しますか？"} , class:'submit-btn' %>
+            <%= link_to "Member削除", member_path(@member.id), method: :delete, data: {confirm: "このMemberを削除しますか？"} , class:'submit-btn' %>
             <%= link_to '戻る', members_path, class:'submit-btn' %>
           </div>
         </div>
@@ -74,8 +74,9 @@
               </tbody>
             </table>
             <div class='meeting-btn-content'>
+            <%# paramsを複数設定できずに苦戦 %>
               <%= link_to "編集", edit_member_meeting_path(@member.id, meeting.id), method: :get, class:'submit-btn' %>
-              <%= link_to "削除", member_meeting_path(@member.id, meeting.id), method: :delete, data: {confirm: "削除しますか？"} , class:'submit-btn' %>
+              <%= link_to "削除", member_meeting_path(@member.id, meeting.id), method: :delete, data: {confirm: "この面談記録を削除しますか？"} , class:'submit-btn' %>
             </div>
           </div>
           <% end %>

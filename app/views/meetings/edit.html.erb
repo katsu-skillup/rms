@@ -6,6 +6,7 @@
           <h2 class='meeting-reg-title'>面談記録</h2>
         </div>
         
+       <%# methodにputを指定しなかったため、エラーで苦戦 %>
        <%= form_with model: @meeting, url: member_meeting_path, method: :put, local: true do |f| %>
        <%= render 'shared/error_messages', model: f.object %>
 
@@ -18,7 +19,7 @@
         </div>
         <div class='meeting-reg'>
           <div class="title-text">
-           面談記録
+           面談内容
            <span class='indispensable'>必須</span>
           </div>
           <%= f.text_area :meeting_info, class:"meeting-exp", placeholder:"面談内容" %>
