@@ -17,5 +17,5 @@ class Member < ApplicationRecord
     validates :motivation
   end 
 
-  validates :valuation_id, numericality: { other_than: 1, message: 'を入力してください。' }
+  validates :valuation_id, numericality: { other_than: 1, message: 'を入力してください' }
 end
