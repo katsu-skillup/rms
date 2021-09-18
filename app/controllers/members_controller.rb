@@ -5,7 +5,7 @@ class MembersController < ApplicationController
 
 def index
   members = Member.all
-  @members = current_user.members.order(valuation_id:"ASC")
+  @members = current_user.members.order(valuation_id:"ASC").page(params[:page])
 end
 
 def new
@@ -22,7 +22,7 @@ def create
 end
 
  def show
-  @meetings = @member.meetings.order(meeting_date:"DESC")
+  @meetings = @member.meetings.order(meeting_date:"DESC").page(params[:page]).per(3)
  end
 
  def edit

@@ -122,4 +122,10 @@ body{
   top: 0px;
 }
 
+.meeting_page{
+  height: 20px;
+  margin: 8px;
+  display: flex;
+  justify-content:space-around
+}
 

@@ -63,4 +63,6 @@ gem 'mini_magick'
 gem 'image_processing'
 gem 'active_hash'
 gem 'rails-i18n'
-
+gem 'kaminari'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
