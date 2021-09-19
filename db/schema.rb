@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_120859) do
+ActiveRecord::Schema.define(version: 2021_09_19_072442) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 2021_09_06_120859) do
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,4 +86,5 @@ ActiveRecord::Schema.define(version: 2021_09_06_120859) do
   add_foreign_key "meetings", "members"
   add_foreign_key "meetings", "users"
   add_foreign_key "members", "users"
+  add_foreign_key "sns_credentials", "users"
 end
