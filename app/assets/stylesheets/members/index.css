@@ -93,28 +93,11 @@ body{
   margin-bottom: 5px;
 }
 
-//pagination
-.pagination{
-  margin: 0 0 10px 0;
-  width: 50%;
-  height: 20%;
-  display: flex;
-  justify-content: flex-start;
-}
-.pagination span{
-  height: 30px;
-  padding: 5px;
-  text-align: center;
-  width: 50px;
-  transition: .3s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
 .pagination span:hover{
-  background-color: dodgerblue;
-  color: white;
-  border-radius: 15px;
-  transition: .3s;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  color:red;
 }
+
+
+
+
+
