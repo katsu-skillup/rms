@@ -9,12 +9,28 @@
              アカウント作成
            </h1>
         </div>
+         <p class='login-way'>次の方法で登録する</p>
+        <div class='sns-login'>
+           <%= link_to user_facebook_omniauth_authorize_path, method: :post do %>
+             <div class='facebook'>
+               <%= image_tag '/images/f_logo72.png',:size => '35x35' ,class:'facebook-logo' %>
+               <p class="facebook-link">Facebook</p>
+             </div> 
+           <% end %>
+           <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %>
+             <div class="google">
+               <%= image_tag '/images/btn_google.png',:size => '40x40' ,class:'google-logo' %>
+               <p class="google-link">Google</p>
+             </div>
+           <% end %>
+        </div>
+         <p class='login-way'>または</p>
         <div class='form-group'>
           <div class='form-text-wrap'>
             <label class="form-text">名前</label>
             <span class='indispensable'>必須</span>
           </div>
-          <%= f.text_area :name, class:"account-input", id:"name", placeholder:"例) 田中太郎", maxlength:"40" %>
+          <%= f.text_field :name, class:"account-input", id:"name", placeholder:"例) 田中太郎", maxlength:"40" %>
         </div>
         <div class='form-group'>
           <div class='form-text-wrap'>
@@ -23,6 +39,9 @@
           </div>
           <%= f.email_field :email, class:"account-input", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
         </div>
+      <% if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
         <div class='form-group'>
           <div class='form-text-wrap'>
             <label class="form-text">パスワード</label>
@@ -38,6 +57,7 @@
           </div>
           <%= f.password_field :password_confirmation, class:"account-input", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
         </div>
+      <% end %>
         <div class='form-group'>
           <div class='btn-content'>
             <%= f.submit "作成する" , class:"submit-btn" %>

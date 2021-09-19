@@ -9,6 +9,22 @@
              アカウント情報入力
            </h1>
         </div>
+        <p class='login-way'>次の方法でログインする</p>
+        <div class='sns-login'>
+          <%= link_to user_facebook_omniauth_authorize_path, method: :post do %>
+           <div class='facebook'>
+             <%= image_tag '/images/f_logo72.png',:size => '35x35' ,class:'facebook-logo' %>
+             <p class="facebook-link">Facebook</p>
+           </div>
+          <% end %>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %> 
+           <div class="google">
+             <%= image_tag '/images/btn_google.png',:size => '40x40' ,class:'google-logo' %>
+             <p class="google-link">Google</p>
+           </div>
+          <% end %>
+        </div>
+        <p class='login-way'>または</p>
         <div class='form-group'>
           <div class='form-text-wrap'>
             <%= f.label :Eメール %>

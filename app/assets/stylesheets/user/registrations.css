@@ -29,7 +29,7 @@ padding-top: 20px;
 border-bottom:0.5px solid #dddddd;
 }
 
-.form-group{
+.form-group,.btn-group{
 background-color: white;
 width: 50vw;
 }
@@ -89,3 +89,49 @@ top: 0px;
   margin: 3px 0;
   text-align: center;
 }
+
+.login-way{
+  background-color: white;
+  width: 50vw;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.sns-login{
+  background-color: white;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+
+.facebook{
+  width: 12vw;
+  padding-left: 10px;
+  padding-top: 3px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+}
+
+.google{
+  width: 12vw;
+  padding-left: 10px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid gray;
+  border-radius: 5px; 
+  display: flex;
+}
+
+.facebook-link,.google-link{
+  padding: 8px 10px 10px 20px;
+}
+
+.google-link{
+  padding: 10px 10px 10px 20px;
+}
+
+.facebook-link:hover,.google-link:hover{
+  color: red;
+}
+

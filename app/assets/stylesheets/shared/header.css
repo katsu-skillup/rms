@@ -23,12 +23,15 @@ li {
 
 .right-lists{
   display: flex;
-  width: 20vw;
+  min-width: 20vw;
   justify-content: space-around;
   padding: 5px 10px;
   font-family:'Shippori Mincho', serif ;
 }
 
+.header-list{
+  margin-left: 15px;
+}
 
 .header-list:hover{
   color: red;
