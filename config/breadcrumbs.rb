@@ -13,12 +13,33 @@ crumb :members_new do
 end
 
 crumb :member_show do |member|
-  link "#{member.name}さんの詳細", member_path(member)
-  parent :members_index
+  unless params[:id] == nil
+    member = Member.find(params[:id])
+    link "#{member.member_name}さんの詳細ページ", member_path(member)
+    parent :members_index
+  else
+    member = Member.find(params[:member_id])
+    link "#{member.member_name}さんの詳細ページ", member_path(member)
+    parent :members_index
+  end
 end
 
 crumb :member_edit do |member|
-  link "Member編集"
+  member = Member.find(params[:id])
+  link "#{member.member_name}さんの登録情報編集", member_path(member)
+  parent :member_show, member
+end
+
+crumb :member_meeting_new do |member|
+  member = Member.find(params[:member_id])
+  link "#{member.member_name}さんの新規面談記録", new_member_meeting_path(member)
+  parent :member_show, member
+end
+
+crumb :member_meeting_edit do |member, meeting|
+  meeting = Meeting.find(params[:id])
+  member = Member.find(params[:member_id])
+  link "#{member.member_name}さんの面談記録（#{meeting.meeting_date}）", edit_member_meeting_path(member, meeting)
   parent :member_show, member
 end
 
