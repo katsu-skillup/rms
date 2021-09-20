@@ -13,9 +13,15 @@ crumb :members_new do
 end
 
 crumb :member_show do |member|
+  if params[:member_id] == nil 
     member = Member.find(params[:id])
-     link "#{member.member_name}さんの詳細ページ", member_path(member)
-     parent :members_index
+    link "#{member.member_name}さんの詳細ページ", member_path(member)
+    parent :members_index
+  else
+    member = Member.find(params[:member_id])
+    link "#{member.member_name}さんの詳細ページ", member_path(member)
+    parent :members_index
+  end
 end
 
 crumb :member_edit do |member|
@@ -24,6 +30,18 @@ crumb :member_edit do |member|
   parent :member_show, member
 end
 
+crumb :member_meeting_new do |member|
+  member = Member.find(params[:member_id])
+  link "#{member.member_name}さんの新規面談記録", new_member_meeting_path(member)
+  parent :member_show, member
+end
+
+crumb :member_meeting_edit do |member, meeting|
+  member = Member.find(params[:member_id])
+  meeting = Meeting.find(params[:id])
+  link "#{member.member_name}さんの面談記録（#{meeting.meeting_date}）"
+  parent :member_show, member
+end
 
 
 # If you want to split your breadcrumbs configuration over multiple files, you
