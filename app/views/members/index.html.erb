@@ -5,12 +5,12 @@
   <div class='members-show'>
           <div class='members-box'>
            <div class='member-table-explanation'>
-              <span class='index-title'><%= current_user.name %>様の管理Member一覧</span>
+              <span class='index-title'><%= current_user.name %>様の管理メンバー一覧</span>
            </div>
            <div class='member-menu'>
               <ul class='member-menu-list'>
-                <li><%= link_to 'トップページ', root_path, class:"submit-btn" %></li>
-                <li><%= link_to 'Member登録', new_member_path, class:"submit-btn" %></li>
+                <li><%= link_to 'Home', root_path, class:"submit-btn" %></li>
+                <li><%= link_to 'メンバー登録', new_member_path, class:"submit-btn" %></li>
               </ul>
            </div>
            <table class='members-table'>

@@ -45,7 +45,7 @@ font-weight: bold;
 }
 
 .form-text-wrap{
-margin: 10px 0px 10px 175px;
+margin: 10px 0px 10px 200px;
 }
 
 .account-input{
@@ -53,7 +53,7 @@ border: 1px solid gray;
 border-radius: 5px;
 width: 25vw;
 height: 6vh;
-margin: 0 0 10px 175px;
+margin: 0 0 10px 200px;
 padding-left: 10px;
 }
 

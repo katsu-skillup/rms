@@ -8,8 +8,9 @@
           <div class='main-menu'>
             <p>Main Menu</p>
               <ul class='main-menu-lists'>
-                <li class='menu-list'><%= link_to 'Member 登録', new_member_path %></li>
-                <li class='menu-list'><%= link_to 'Member 一覧', members_path %></li>
+                <li class='menu-list'><%= link_to 'メンバー 登録', new_member_path %></li>
+                <li class='menu-list'><%= link_to 'メンバー 一覧', members_path %></li>
+                <li class='menu-list'><%= link_to 'アカウント削除', user_registration_path, method: :delete, data: {confirm: "本当にアカウントを削除しますか？"} %></li>
               </ul>
           </div>
           <% else %>

@@ -3,12 +3,12 @@ crumb :root do
 end
 
 crumb :members_index do
-  link "Member一覧", members_path
+  link "メンバー一覧", members_path
   parent :root
 end
 
 crumb :members_new do
-  link "Member登録", new_member_path
+  link "メンバー登録", new_member_path
   parent :members_index
 end
 

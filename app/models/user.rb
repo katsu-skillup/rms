@@ -9,9 +9,9 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' 
 
-  has_many :members
-  has_one :meeting
-  has_many :sns_credentials
+  has_many :members, dependent: :destroy
+  has_one :meeting, dependent: :destroy
+  has_many :sns_credentials, dependent: :destroy
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
