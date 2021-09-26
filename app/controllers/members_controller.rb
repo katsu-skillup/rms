@@ -4,8 +4,10 @@ class MembersController < ApplicationController
   before_action :cheack_authority, only: [:show, :edit, :update, :destroy] 
 
 def index
-  members = Member.all
   @members = current_user.members.order(valuation_id:"ASC").page(params[:page])
+  if @members.count == 0
+    redirect_to new_member_path
+  end
 end
 
 def new
