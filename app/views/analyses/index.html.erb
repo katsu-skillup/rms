@@ -1,0 +1,173 @@
+<%= render "shared/header" %>
+
+<% breadcrumb :members_analyses  %>
+<%= render "shared/breadcrumbs" %>
+  <div class='members-show'>
+          <div class='members-box'>
+           <div class='member-table-explanation'>
+              <span class='index-title'><%= current_user.name %>様の管理メンバー分析</span>
+           </div>
+           <div class='member-menu'>
+              <ul class='member-menu-list'>
+                <li><%= link_to 'メンバー登録', new_member_path, class:"submit-btn" %></li>
+                <li><%= link_to 'メンバー一覧', members_path, class:"submit-btn" %></li>
+              </ul>
+           </div>
+           <table class='members-table'>
+             <thead>
+               <tr>
+                 <th class='member-item'>管理人数</th>
+                 <th class='member-item'>コミュニケーション能力（平均）</th>
+                 <th class='member-item'>リーダーシップ（平均）</th>
+                 <th class='member-item'>スキル（平均）</th>
+                 <th class='member-item'>モチベーション（平均）</th>
+               </tr>
+             </thead>
+             <tbody>
+             <tr>
+                 <td class='analyses-information'>
+                   <%= @members.count %>人
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.average(:communication).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.average(:leadership).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.average(:skill).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.average(:motivation).round(1) %>
+                 </td>
+             </tbody>
+           </table>
+           <% unless @members.where(valuation_id: '2').count == 0 %>
+           <table class='members-table'>
+             <thead>
+               <tr>
+                 <th class='member-item'>うちS評価</th>
+                 <th class='member-item'>コミュニケーション能力（平均）</th>
+                 <th class='member-item'>リーダーシップ（平均）</th>
+                 <th class='member-item'>スキル（平均）</th>
+                 <th class='member-item'>モチベーション（平均）</th>
+               </tr>
+             </thead>
+             <tbody>
+             <tr>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '2').count %>人
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '2').average(:communication).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '2').average(:leadership).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '2').average(:skill).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '2').average(:motivation).round(1) %>
+                 </td>
+             </tbody>
+           </table>
+           <% end %>
+           <% unless @members.where(valuation_id: '3').count == 0 %>
+           <table class='members-table'>
+             <thead>
+               <tr>
+                 <th class='member-item'>うちA評価</th>
+                 <th class='member-item'>コミュニケーション能力（平均）</th>
+                 <th class='member-item'>リーダーシップ（平均）</th>
+                 <th class='member-item'>スキル（平均）</th>
+                 <th class='member-item'>モチベーション（平均）</th>
+               </tr>
+             </thead>
+             <tbody>
+              <%# リンクをtableの値ごとに設定しないとうまくいかなかった %>
+             <tr>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '3').count %>人
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '3').average(:communication).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '3').average(:leadership).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '3').average(:skill).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '3').average(:motivation).round(1) %>
+                 </td>
+             </tbody>
+           </table>
+           <% end %>
+           <% unless @members.where(valuation_id: '4').count == 0 %>
+           <table class='members-table'>
+             <thead>
+               <tr>
+                 <th class='member-item'>うちB評価</th>
+                 <th class='member-item'>コミュニケーション能力（平均）</th>
+                 <th class='member-item'>リーダーシップ（平均）</th>
+                 <th class='member-item'>スキル（平均）</th>
+                 <th class='member-item'>モチベーション（平均）</th>
+               </tr>
+             </thead>
+             <tbody>
+             <tr>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '4').count %>人
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '4').average(:communication).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '4').average(:leadership).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '4').average(:skill).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '4').average(:motivation).round(1) %>
+                 </td>
+             </tbody>
+           </table>
+           <% end %>
+           <% unless @members.where(valuation_id: '5').count == 0 %>
+           <table class='members-table'>
+             <thead>
+               <tr>
+                 <th class='member-item'>うちC評価</th>
+                 <th class='member-item'>コミュニケーション能力（平均）</th>
+                 <th class='member-item'>リーダーシップ（平均）</th>
+                 <th class='member-item'>スキル（平均）</th>
+                 <th class='member-item'>モチベーション（平均）</th>
+               </tr>
+             </thead>
+             <tbody>
+             <tr>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '5').count %>人
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '5').average(:communication).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '5').average(:leadership).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '5').average(:skill).round(1) %>
+                 </td>
+                 <td class='analyses-information'>
+                   <%= @members.where(valuation_id: '5').average(:motivation).round(1) %>
+                 </td>
+             </tbody>
+           </table>
+           <% end %>
+            <div>
+            <%= pie_chart @chart,colors: ["#c83e36","#00a0dc","#abcc33","#ffe556"] , width: "500px", legend: "left" %>
+            </div>
+          </div>
+         </div>
+        </div>
+
+<%= render "shared/footer" %>

@@ -7,6 +7,11 @@ crumb :members_index do
   parent :root
 end
 
+crumb :members_analyses do
+  link "メンバー分析", analyses_path
+  parent :members_index
+end
+
 crumb :members_new do
   link "メンバー登録", new_member_path
   parent :members_index

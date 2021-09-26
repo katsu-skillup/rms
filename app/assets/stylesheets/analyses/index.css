@@ -1,0 +1,8 @@
+.analyses-information{
+  min-height: 20vh;
+  min-width: 7vw;
+  max-width: 20vw;
+  text-align: center;
+  padding: 5px;
+  border: 0.5px solid #333333;
+}
