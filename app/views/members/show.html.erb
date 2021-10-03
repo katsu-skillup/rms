@@ -53,7 +53,7 @@
           <div class='meeting-btn-content'>
             <%= link_to '面談記録入力', new_member_meeting_path(@member.id), class:"submit-btn" %>
             <%= link_to "メンバー編集", edit_member_path(@member.id), method: :get, class:'submit-btn' %>
-            <%= link_to "メンバー削除", member_path(@member.id), method: :delete, data: {confirm: "このMemberを削除しますか？"} , class:'submit-btn' %>
+            <%= link_to "メンバー削除", member_path(@member.id), method: :delete, data: {confirm: "このメンバーを削除しますか？"} , class:'submit-btn' %>
             <%= link_to '戻る', members_path, class:'submit-btn' %>
           </div>
         </div>
